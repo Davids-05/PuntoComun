@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PuntoComún</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="index.html">PuntoComún</a>
+    <nav aria-label="Principal">
+      <a href="index.html">Reportes</a>
+      <a href="reportar.html">Reportar un daño</a>
+      <a href="ingreso.html">Ingresar</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Reportes de la comunidad</h1>
+    <p class="suave">Si hay riesgo inmediato para las personas, llama a la línea 123.</p>
+    <p id="estado" class="mensaje" role="status"></p>
+    <section id="lista" aria-label="Lista de reportes"></section>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

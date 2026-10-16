@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingresar · PuntoComún</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="index.html">PuntoComún</a>
+    <nav aria-label="Principal"><a href="index.html">Reportes</a><a href="registro.html">Crear cuenta</a></nav>
+  </header>
+  <main>
+    <div class="tarjeta" style="max-width:480px">
+      <form id="paso1" novalidate>
+        <p class="suave">Paso 1 de 2</p>
+        <h1>Ingresa a PuntoComún</h1>
+        <div class="campo"><label for="email">Correo electrónico</label><input id="email" type="email" autocomplete="email" required></div>
+        <div class="campo"><label for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <p id="mensaje1" class="mensaje" role="alert"></p>
+        <button type="submit">Continuar</button>
+        <p class="suave">¿No tienes cuenta? <a href="registro.html">Créala</a></p>
+      </form>
+
+      <form id="paso2" class="oculto" novalidate>
+        <p class="suave">Paso 2 de 2</p>
+        <h1>Verifica tu código</h1>
+        <p class="suave">Enviamos un código de 6 dígitos a tu correo. Vence en pocos minutos.</p>
+        <div class="campo"><label for="codigo">Código</label><input id="codigo" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required></div>
+        <p id="mensaje2" class="mensaje" role="alert"></p>
+        <div class="fila">
+          <button type="submit">Verificar</button>
+          <button type="button" id="reenviar" class="secundario">Reenviar código</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/ingreso.js"></script>
+</body>
+</html>

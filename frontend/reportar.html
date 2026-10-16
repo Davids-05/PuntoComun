@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportar un daño · PuntoComún</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="index.html">PuntoComún</a>
+    <nav aria-label="Principal">
+      <a href="index.html">Reportes</a>
+      <span id="usuario" class="suave"></span>
+      <button type="button" id="salir" class="secundario">Cerrar sesión</button>
+    </nav>
+  </header>
+  <main>
+    <div class="tarjeta" style="max-width:560px">
+      <h1>Reportar un daño</h1>
+      <p class="suave">Si hay riesgo inmediato para las personas, llama a la línea 123.</p>
+      <form id="form" novalidate>
+        <div class="campo">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" required>
+            <option value="vias">Vías y andenes</option>
+            <option value="alumbrado">Alumbrado público</option>
+            <option value="agua">Agua y alcantarillado</option>
+            <option value="espacios_publicos">Espacios públicos</option>
+          </select>
+        </div>
+        <div class="campo"><label for="descripcion">Descripción</label><textarea id="descripcion" rows="4" maxlength="500" required></textarea></div>
+        <div class="fila">
+          <div class="campo"><label for="latitud">Latitud</label><input id="latitud" inputmode="decimal" required></div>
+          <div class="campo"><label for="longitud">Longitud</label><input id="longitud" inputmode="decimal" required></div>
+        </div>
+        <button type="button" id="ubicacion" class="secundario">Usar mi ubicación</button>
+        <p id="mensaje" class="mensaje" role="alert"></p>
+        <button type="submit">Enviar reporte</button>
+      </form>
+    </div>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/reportar.js"></script>
+</body>
+</html>

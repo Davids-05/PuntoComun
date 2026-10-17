@@ -85,4 +85,11 @@ docs/              guia_sustentacion.md
 - `create_all` crea las tablas al arrancar; en un proyecto real se usarían migraciones (Alembic).
 - El registro revela si un correo ya existe (409). Es una decisión de usabilidad; el login y el reenvío no lo revelan.
 - Aún no hay verificación del correo al registrarse, recuperación de contraseña ni roles institucionales con panel.
-- Se probó el envío SMTP real: hay que verificarlo en producción debido a las leyes anti-spam de algunos vos gratuitos.
+- No se probó el envío SMTP real: hay que verificarlo con tus credenciales.
+
+## Despliegue (Render u otro)
+
+- Build: `pip install -r requirements.txt`
+- Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+- Variables: `APP_ENV=production`, `SECRET_KEY` (aleatoria), `COOKIE_SECURE=true`, `TRUST_PROXY=true`, `EMAIL_MODE=smtp` y las `SMTP_*`.
+- **Ojo:** en el plan gratuito de Render el sistema de archivos es efímero, así que la base SQLite se pierde al reiniciar. Documéntalo en la entrega o usa un disco persistente. Verifica las condiciones vigentes del plan.

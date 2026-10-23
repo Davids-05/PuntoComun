@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     otp_max_intentos: int = 5
 
     # Correo: "console" imprime el código (solo desarrollo); "smtp" envía de verdad
-    email_mode: str = "smtp"
+    email_mode: str = "console"
     smtp_host: str = ""
     smtp_port: int = 587
     smtp_user: str = ""
@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     otp_window: int = 60
     resend_limit: int = 3
     resend_window: int = 300
-    trust_proxy: bool = False  # True detrás de Render/Railway para leer X-Forwarded-For
+    trust_proxy: bool = False  
 
 
 @lru_cache

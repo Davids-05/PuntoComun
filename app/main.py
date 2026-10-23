@@ -14,7 +14,7 @@ from app.routes import auth_routes, reporte_routes
 from app.services.errors import ServicioError
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-CLAVE_POR_DEFECTO = "cambia-esta-clave-solo-para-desarrollo"
+CLAVE_POR_DEFECTO = "gkP9mX2vR7bN5wQ1zT4yL8xK3jF6hG9pE"
 
 
 @asynccontextmanager
@@ -22,7 +22,7 @@ async def lifespan(app: FastAPI):
     s = get_settings()
     if s.app_env == "production" and (s.secret_key == CLAVE_POR_DEFECTO or len(s.secret_key) < 32):
         raise RuntimeError("SECRET_KEY insegura: define una clave aleatoria de al menos 32 caracteres")
-    Base.metadata.create_all(engine)  # para el parcial; en un proyecto real se usan migraciones (Alembic)
+    Base.metadata.create_all(engine)  
     yield
 
 
